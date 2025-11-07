@@ -27,8 +27,8 @@ export default function Hero({ onSearch }) {
                     <span className = "pill">Sushi</span>
                 </div>
             </div>
-            <div className = "card" style = {{overflow : "hiddeb"}}>
-                <img src = "/image/hero.jpg" alt = "Delicious meals" style = {{width : "100%", height : "100%", objectFit : "cover"}} />
+            <div className = "card" style = {{overflow : "hidden"}}>
+                <img src = "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=900&q=80" alt = "Delicious meals" style = {{width : "100%", height : "100%", objectFit : "cover"}} />
             </div>
         </section>
     );
