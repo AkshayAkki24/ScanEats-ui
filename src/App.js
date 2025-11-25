@@ -1,21 +1,19 @@
 import { useState } from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Categories from "./components/Categories";
-import Restraurants from "./components/Restaurants";
+import Login from "./components/Login";
+import Home from "./components/Home"; // your restaurant UI page
 
-export default function App() {
-  const [filter, setFilter] = useState("");
+function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
 
   return (
-    <div>
-      <Navbar />
-      <Hero onSearch={(q) => setFilter(q.toLowerCase())} />
-      <Categories />
-      <Restraurants filter={filter} />
-      <footer className = "footer container">
-        © {new Date().getFullYear()} Scan-Eats — All rights reserved.
-      </footer>
-    </div>
+    <>
+      {!loggedIn ? (
+        <Login onLogin={setLoggedIn} />
+      ) : (
+        <Home />
+      )}
+    </>
   );
 }
+
+export default App;
