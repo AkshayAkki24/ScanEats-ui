@@ -1,24 +1,15 @@
-export default function Navbar() {
+import React from "react";
+
+export default function Navbar({ onLogout }) {
   return (
-    <header className="container">
-      <nav className="nav">
-        <div className="brand">
-          <img
-            src="https://img.icons8.com/ios-filled/50/22c55e/qr-code.png"
-            alt="Scan-Eats"
-            width="28"
-            height="28"
-          />
-          <span>Scan-Eats</span>
-        </div>
-        <div className="links">
-          <a href="#restaurants">Restaurants</a>
-          <a href="#categories">Categories</a>
-          <a href="#how">How it works</a>
-          <a href="#help">Help</a>
-        </div>
-        <button className="btn secondary">Sign in</button>
-      </nav>
-    </header>
+    <div className="navbar">
+      <div style={{display:"flex", gap:12, alignItems:"center"}}>
+        <img src="https://img.icons8.com/ios-filled/40/22c55e/qr-code.png" alt="logo" style={{width:36}} />
+        <strong>Scan-Eats</strong>
+      </div>
+      <div style={{display:"flex", gap:12}}>
+        <button className="btn ghost" onClick={onLogout}>Logout</button>
+      </div>
+    </div>
   );
 }
